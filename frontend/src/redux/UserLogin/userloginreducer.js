@@ -4,32 +4,33 @@ import * as types from "./userloginactiontype"
 const initlogin ={
     isError:false,
     isLoading:false,
-    token:null
+    token:null,
+    error:""
 }
 export const Loginreducer = (state = initlogin,action)=>{
-     
+     console.log(action.payload)
     switch(action.type){
-         case types.GETLOGINDATAREQUEST:{
+         case types.LOGINDATAREQUEST:{
             return{
                 ...state,
                 isError:false,
                 isloading:true,
             }
          }
-         case types.GETLOGINDATASUCCESS:{
+         case types.LOGINDATASUCCESS:{
             return{
                 ...state,
                 isError:false,
                 isloading:false,
-                token:action.payload
-                
+                token:action.payload.token
             }
          }
-         case types.GETLOGINDATAFALIURE:{
+         case types.LOGINDATAFALIURE:{
             return{
                 ...state,
                 isError:true,
-                isloading:false,      
+                isloading:false, 
+                error:action.payload     
             }
          }
           default: return state

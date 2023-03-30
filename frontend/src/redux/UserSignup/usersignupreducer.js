@@ -3,9 +3,11 @@ import * as types from "./usersignupactiontype"
 const init = {
     isError:false,
     isloading:false,
-    data:[]
+    data:[],
+    error:""
 }
 const usersignupreducer = (state=init,action) => {
+    console.log(action.payload)
     switch(action.type){
         case types.POSTDATAREQUEST:{
            return{
@@ -27,7 +29,8 @@ const usersignupreducer = (state=init,action) => {
            return{
                ...state,
                isError:true,
-               isloading:false,      
+               isloading:false,  
+               error :action.payload    
            }
         }
          default: return state
