@@ -6,6 +6,9 @@ const ringRouter = require("./routes/ring.route");
 const braceletRouter = require("./routes/bracelet.route");
 const earringRouter = require("./routes/earring.route");
 const mangalsutraRouter = require("./routes/mangalsutra.route");
+const cartRouter = require("./routes/cart.route");
+const { auth } = require("./middlewares/auth");
+const orderRouter = require("./routes/order.route");
 require("dotenv").config();
 
 const app = express();
@@ -17,6 +20,10 @@ app.use("/ring", ringRouter)
 app.use("/bracelet", braceletRouter)
 app.use("/earring", earringRouter)
 app.use("/mangalsutra", mangalsutraRouter)
+
+app.use(auth)
+app.use("/cart" ,cartRouter )
+app.use('/order', orderRouter)
 
 app.get("/", (req, res) => {
   res.status(200).send("Home page");
