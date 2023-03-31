@@ -74,7 +74,7 @@ const SignupPage = () => {
   //   </form>
   // }
 
-  return (<Box width={["95%","95%","40%","40%"]} margin="auto" marginTop="5%">
+  return (<Box width={["95%","95%","40%","40%"]} margin="auto" marginTop={["15%","15%","5%","5%"]} padding="2%">
     <form className='form' onSubmit={(e) => onSubmit(e,data)}>
       <h1>Create account here</h1>
       <FormLabel>Name</FormLabel>

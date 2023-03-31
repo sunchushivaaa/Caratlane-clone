@@ -8,7 +8,6 @@ const initlogin ={
     error:""
 }
 export const Loginreducer = (state = initlogin,action)=>{
-     console.log(action.payload)
     switch(action.type){
          case types.LOGINDATAREQUEST:{
             return{

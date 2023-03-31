@@ -8,3 +8,27 @@
 .App {
   text-align: center;
 }
+
+.order_summary_box{
+  padding: 2%;
+  display: flex;
+  justify-content: space-between;
+}
+.order_box{
+  border: 1px solid red;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.order_box input{
+  width: 40%;
+
+}
+.order_box select{
+  width: 40%;
+
+}
+.order_box select option{
+  width: 100%;
+}
