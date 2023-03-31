@@ -6,13 +6,24 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import { store } from "./redux/store";
-
+import {ChakraProvider} from "@chakra-ui/react"
+import { Auth0Provider } from "@auth0/auth0-react";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
+  <Auth0Provider
+  domain="dev-jk2r0uxvpqzvog6k.us.auth0.com"
+  clientId="AtijxoQJwtLdd6ifICxwQtLBcrHdHFWq"
+  authorizationParams={{
+    redirect_uri: window.location.origin
+  }}
+>
+    <ChakraProvider>
     <BrowserRouter>
       <App />
     </BrowserRouter>
+    </ChakraProvider>
+    </Auth0Provider>
   </Provider>
 );
 

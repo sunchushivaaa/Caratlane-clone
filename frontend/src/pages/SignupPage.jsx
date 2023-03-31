@@ -1,32 +1,23 @@
-import { FormControl, FormErrorMessage, Checkbox, Input, Select, Button, Spinner, useToast } from '@chakra-ui/react'
+import { FormControl, FormErrorMessage, Checkbox, Input, Select, Button, Spinner, useToast, Box, FormLabel } from '@chakra-ui/react'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import usergetdataaction from '../redux/UserSignup/usergetdataaction'
-
+import "../components/style.css"
 import usersignupaction from '../redux/UserSignup/usersignupaction'
 import { Link, useNavigate } from 'react-router-dom'
-
+import { useAuth0 } from "@auth0/auth0-react";
 const SignupPage = () => {
   const init = {
     email: "",
     password: "",
     name: "",
-    phonenumber: "",
-    token: null,
-    cart:[],
-    wish:[]
+    phone_number: "",
   }
+  const { user,loginWithRedirect } = useAuth0();
   const [data, setData] = useState(init)
   const toast = useToast()
   const dispatch = useDispatch()
-  const userdata = useSelector(store => store.usergetdatareducer.userdata)
-  const isloading = useSelector(store=>store.usergetdatareducer.isloading)
+
  const navigate =useNavigate()
-
-  useEffect(() => {
-    dispatch(usergetdataaction())
-  }, [])
-
   const handleChange = (e) => {
     const { name } = e.target
     let  val = e.target.value
@@ -34,49 +25,73 @@ const SignupPage = () => {
   }
   const onSubmit = (e,data) => {
     e.preventDefault()
-    let payload = { ...data, token: data.name }
-      dispatch(usersignupaction(payload))
-      toast({
-        position:"top",
-        title: 'Account created succesfully',
-        status: 'success',
-        duration: 9000,
-        isClosable: true,
+      dispatch(usersignupaction(data))
+      .then((res)=>{
+        console.log(res)
+        if(res.payload.user){
+          toast({
+            position:"top",
+            title: 'Account created succesfully',
+            status: 'success',
+            duration: 9000,
+            isClosable: true,
+          })
+          setData(init)
+          navigate("/login")
+        } else{
+          toast({
+            position:"top",
+            title:res.payload.msg,
+            status: 'error',
+            duration: 9000,
+            isClosable: true,
+          })
+          setData(init)
+          navigate("/login")
+        }
+      
       })
-      setData(init)
-      navigate("/login")
+      .catch((err)=>{
+        toast({
+          position:"top",
+          title: err,
+          status: 'error',
+          duration: 9000,
+          isClosable: true,
+        })
+        setData(init)
+
+      })
+   
 
  
   }
 
-  if(isloading){
-    return <form className='form'>
-        <Spinner thickness='4px' speed='0.65s' emptyColor='gray.200' color='blue.500' size='xl' margin="auto"/>
+  // if(isloading){
+  //   return <form className='form'>
+  //       <Spinner thickness='4px' speed='0.65s' emptyColor='gray.200' color='blue.500' size='xl' margin="auto"/>
     
-    </form>
-  }
+  //   </form>
+  // }
 
-  return (<Box width={["95%","95%","40%","40%"]} margin="auto">
+  return (<Box width={["95%","95%","40%","40%"]} margin="auto" marginTop="5%">
     <form className='form' onSubmit={(e) => onSubmit(e,data)}>
       <h1>Create account here</h1>
-      <FormControl className='form-controll' width="100%">
-
+      <FormLabel>Name</FormLabel>
         <Input name='name' value={data.name} onChange={handleChange} className='input' type='text' placeholder="Enter your name" />
-
+        <FormLabel>Email</FormLabel>
         <Input name="email" value={data.email} onChange={handleChange} className='input' type='email' placeholder="Enter your email" />
-
-        <Input name="phonenumber" value={data.phonenumber} onChange={handleChange} className='input' type='number' placeholder="Enter your phone number" />
-
+        <FormLabel>Phone Number</FormLabel>
+        <Input name="phone_number" value={data.phone_number} onChange={handleChange} className='input' type='number' placeholder="Enter your phone number" />
+        <FormLabel>Password</FormLabel>
         <Input name="password" value={data.password} onChange={handleChange} className='input' type='password' placeholder="Enter your password" />
-
-      </FormControl>
-      <Button colorScheme='teal'type='submit'>
+      <Button colorScheme='teal'type='submit' marginTop="3%">
         Submit
       </Button>
-      <div className='divlogin'>
-      <p>Already a user <Link to="/login">Login here</Link></p>
-      <Link to="/adminlogin">Admin Login</Link>
-      </div>
+      <Box className='divlogin' marginTop="3%">
+        <Button>Continue with Google</Button>
+      <p>Already a user <Link to="/login" color='navy-blue'>Login here</Link></p>
+      </Box>
     </form>
 
   </Box>
