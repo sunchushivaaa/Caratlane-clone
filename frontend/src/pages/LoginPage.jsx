@@ -40,7 +40,7 @@ const LoginPage = () => {
               })
               localStorage.setItem("token",res.payload.token)
               setData(init)
-              navigate("/")
+              navigate("/productpage")
             } else{
               toast({
                 position:"top",
@@ -75,7 +75,7 @@ const LoginPage = () => {
             <Button mt={4} colorScheme='teal' type='submit' marginTop="3%">
                 Submit
             </Button>
-            <div className='divlogin'><Link to="/signup">Don't have an account Click here</Link></div>
+            <div className='divlogin'><Link to="/register">Don't have an account Click here</Link></div>
         </form>
     </Box>
     )

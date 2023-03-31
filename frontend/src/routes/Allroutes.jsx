@@ -5,6 +5,8 @@ import { Route, Routes } from 'react-router-dom'
 import {LoginPage}from "../pages/LoginPage"
 import ProductPage from '../pages/ProductPage'
 import {SignupPage} from "../pages/SignupPage"
+import CartPage from "../pages/CartPage"
+import PaymentPage from '../pages/PaymentPage'
 const Allroutes = () => {
   return (
     <div>
@@ -12,7 +14,8 @@ const Allroutes = () => {
         <Route path="/productpage" element={<ProductPage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/register' element={<SignupPage/>}/>
-        <Route/>
+        <Route path="/cartpage" element={<CartPage/>}/>
+        <Route path="payment" element={<PaymentPage/>}/>
         <Route/>
       </Routes>
     </div>

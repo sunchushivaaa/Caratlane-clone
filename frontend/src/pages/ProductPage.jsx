@@ -5,6 +5,7 @@ import { useLocation, useSearchParams } from 'react-router-dom'
 import Filter from '../components/filter'
 import Rangeslider from '../components/Rangeslider'
 import { getData } from '../redux/getdata/action'
+import Singleproduct from './Singleproduct'
 
 const ProductPage = () => {
   const data = useSelector(store => store.datareducer.data)
@@ -32,7 +33,7 @@ const ProductPage = () => {
         <Rangeslider mi={2001} ma={3000} />
       </Box>
       <Box>
-        {/* {wachdata.watches.length>0 && wachdata.watches.map(ele=><WatchCard key={ele.id} name={ele.name} id={ele.id} image={ele.image} category={ele.category}/>)} */}
+        { data.Data && data.Data.length>0 && data.Data.map(ele=><Singleproduct key={ele.id} {...ele}/>)}
       </Box>
     </Box>
   );

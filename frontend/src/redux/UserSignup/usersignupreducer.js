@@ -7,7 +7,6 @@ const init = {
     error:""
 }
 const usersignupreducer = (state=init,action) => {
-    console.log(action.payload)
     switch(action.type){
         case types.POSTDATAREQUEST:{
            return{
