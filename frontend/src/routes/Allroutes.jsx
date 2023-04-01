@@ -7,10 +7,12 @@ import ProductPage from '../pages/ProductPage'
 import {SignupPage} from "../pages/SignupPage"
 import CartPage from "../pages/CartPage"
 import PaymentPage from '../pages/PaymentPage'
+import SingleProductPage from "../pages/SingleProductPage"
 const Allroutes = () => {
   return (
     <div>
       <Routes>
+        <Route path='/productpage/:id' element={<SingleProductPage/>}/>
         <Route path="/productpage" element={<ProductPage/>}/>
         <Route path='/login' element={<LoginPage/>}/>
         <Route path='/register' element={<SignupPage/>}/>
