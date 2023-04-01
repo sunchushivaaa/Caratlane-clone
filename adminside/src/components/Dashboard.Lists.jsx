@@ -16,7 +16,7 @@ import {
 } from "@chakra-ui/react";
 import "@fontsource/roboto";
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const lists = [
   "Rings",
@@ -31,6 +31,7 @@ export default function Lists() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = useRef();
   const [name, setName] = useState("");
+  const navigate = useNavigate();
 
   const inputHandler = (e) => {
     setName(e.target.value);
@@ -176,6 +177,7 @@ export default function Lists() {
                   lists.push(name);
                   setName("");
                   onClose();
+                  navigate(`/category/${name}`);
                 }}
                 ml={3}
               >
