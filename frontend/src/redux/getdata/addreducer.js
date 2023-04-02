@@ -1,52 +1,16 @@
 // NOTE: DO NOT MODIFY the intial state structure in this file.
-import { ADD_DATA_REQUEST,ADD_DATA_SUCCESS,ADD_DATA_FAILURE ,GET_CART_DATA_REQUEST ,GET_CART_DATA_FAILURE,GET_CART_DATA_SUCCESS } from "./addactionType";
-const initialState = {
-  data: [],
-  isLoading: false,
-  isError: false,
-  err:""
-};
+import { GET_CART_DATA_REQUEST,GET_CART_DATA_SUCCESS,GET_CART_DATA_FAILURE,ADD_DATA_FAILURE,ADD_DATA_SUCCESS,ADD_DATA_REQUEST } from "./addactionType";
 
-const adddatareducer = (state = initialState,{type,payload}) => {
- console.log(payload)
-  switch(type){
-      case ADD_DATA_REQUEST:{
-         return{
-          ...state,
-          isLoading:true,
-    
-         }
-      }
-      case ADD_DATA_SUCCESS:{
-        return{
-         ...state,
-         isLoading:false,
-         data:payload 
-        }
-     }
-     case ADD_DATA_FAILURE:{
-      return{
-       ...state,
-       isLoading:false,
-       isError:true,
-       err:payload
-      }
-   }
-   default :
-   return state;
-  }
-  
-};
 
 const initialState2 = {
-    data: [],
+    data55: [],
     isLoading: false,
     isError: false,
     err:""
   };
   
   const getcartdatareducer = (state = initialState2,{type,payload}) => {
-
+ console.log(payload)
     switch(type){
         case GET_CART_DATA_REQUEST:{
            return{
@@ -59,7 +23,7 @@ const initialState2 = {
           return{
            ...state,
            isLoading:false,
-           data:payload 
+           data55:payload 
           }
        }
        case GET_CART_DATA_FAILURE:{
@@ -75,6 +39,117 @@ const initialState2 = {
     }
     
   };
+  const initialState = {
+    data56: [],
+    isLoading: false,
+    isError: false,
+    err:""
+  };
   
+  const addcartdatareducer = (state = initialState,{type,payload}) => {
+   
+    switch(type){
+        case ADD_DATA_REQUEST:{
+           return{
+            ...state,
+            isLoading:true,
+      
+           }
+        }
+        case ADD_DATA_SUCCESS:{
+          return{
+           ...state,
+           isLoading:false,
+           data56:payload 
+          }
+       }
+       case ADD_DATA_FAILURE:{
+        return{
+         ...state,
+         isLoading:false,
+         isError:true,
+         err:payload
+        }
+     }
+     default :
+     return state;
+    }
+    
+  };
 
-export { adddatareducer,getcartdatareducer };
+  const initialState3 = {
+    data57: [],
+    isLoading: false,
+    isError: false,
+    err:""
+  };
+  
+  const updatecartdatareducer = (state = initialState3,{type,payload}) => {
+   
+    switch(type){
+        case ADD_DATA_REQUEST:{
+           return{
+            ...state,
+            isLoading:true,
+      
+           }
+        }
+        case ADD_DATA_SUCCESS:{
+          return{
+           ...state,
+           isLoading:false,
+           data57:payload 
+          }
+       }
+       case ADD_DATA_FAILURE:{
+        return{
+         ...state,
+         isLoading:false,
+         isError:true,
+         err:payload
+        }
+     }
+     default :
+     return state;
+    }
+    
+  };
+
+  const initialState4 = {
+    data58: [],
+    isLoading: false,
+    isError: false,
+    err:""
+  };
+  
+  const deletecartdatareducer = (state = initialState4,{type,payload}) => {
+   
+    switch(type){
+        case ADD_DATA_REQUEST:{
+           return{
+            ...state,
+            isLoading:true,
+      
+           }
+        }
+        case ADD_DATA_SUCCESS:{
+          return{
+           ...state,
+           isLoading:false,
+           data58:payload 
+          }
+       }
+       case ADD_DATA_FAILURE:{
+        return{
+         ...state,
+         isLoading:false,
+         isError:true,
+         err:payload
+        }
+     }
+     default :
+     return state;
+    }
+    
+  };
+export { getcartdatareducer,addcartdatareducer };

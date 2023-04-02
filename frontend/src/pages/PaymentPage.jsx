@@ -7,7 +7,7 @@ import { Select } from '@chakra-ui/select'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Singleproduct from './SingleCartproduct'
-import { getData } from '../redux/getdata/action'
+import { getDataRing } from '../redux/getdata/action'
 import { useToast } from '@chakra-ui/react'
 import { useNavigate } from 'react-router-dom'
 
@@ -30,7 +30,7 @@ const PaymentPage = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     useEffect(() => {
-        dispatch(getData())
+        dispatch(getDataRing())
 
     }, [])
     const handleChange = (e) => {

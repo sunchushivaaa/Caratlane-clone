@@ -40,7 +40,7 @@ const LoginPage = () => {
               })
               localStorage.setItem("token",res.payload.token)
               setData(init)
-              navigate("/productpage")
+              navigate("/")
             } else{
               toast({
                 position:"top",
@@ -65,13 +65,13 @@ const LoginPage = () => {
           })
     }
 
-    return (<Box width={["95%", "95%", "40%", "40%"]} height={["60vh", "60vh", "50vh", "50vh"]} margin="auto" marginTop="5%">
+    return (<Box width={["95%", "95%", "40%", "40%"]} height={["60vh", "60vh", "50vh", "50vh"]} margin="auto" marginTop="5%" textAlign="center">
         <form className='form' onSubmit={(e) => onSubmit(e, data)}>
             <h1>Login here please</h1>
             <FormLabel>Email</FormLabel>
-            <Input name="email" value={data.email} onChange={handleChange} className='input' type='email' placeholder="Enter your email" />
+            <Input name="email" required value={data.email} onChange={handleChange} className='input' type='email' placeholder="Enter your email" />
             <FormLabel>Pasword</FormLabel>
-            <Input name="password" value={data.password} onChange={handleChange} className='input' type='password' placeholder="Enter your password" />
+            <Input name="password" required value={data.password} onChange={handleChange} className='input' type='password' placeholder="Enter your password" />
             <Button mt={4} colorScheme='teal' type='submit' marginTop="3%">
                 Submit
             </Button>

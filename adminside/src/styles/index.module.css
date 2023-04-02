@@ -1,0 +1,11 @@
+.Loading > h1 {
+  color: white;
+  opacity: 1;
+  animation: loading 1.2s ease-in-out infinite;
+}
+
+@keyframes loading {
+  50% {
+    color: rgb(137, 0, 75);
+  }
+}
