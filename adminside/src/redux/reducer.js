@@ -11,6 +11,7 @@ import {
   ADDDATA,
   UPDATEDATA,
   DELETEDATA,
+  CLEARDATA,
   GETCATEGORIES,
   UPDATECATEGORIES,
   DELETECATEGORIES,
@@ -36,7 +37,7 @@ export const reducer = (state = initialState, { type, payload }) => {
         ...state,
         isLoading: false,
         isError: false,
-        user: payload.user,
+        user: payload.admin[0],
         token: payload.token,
       };
     }
@@ -85,6 +86,9 @@ export const reducer = (state = initialState, { type, payload }) => {
         return el._id !== payload;
       });
       return { ...state, products: newData };
+    }
+    case CLEARDATA: {
+      return { ...state, products: [] };
     }
     case GETCATEGORIES: {
       return state;

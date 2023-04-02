@@ -8,6 +8,9 @@ import {
   FormHelperText,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { USERCALL } from "../redux/actions";
+import { useDispatch } from "react-redux";
 
 const initialState = {
   email: "",
@@ -15,10 +18,12 @@ const initialState = {
 };
 export default function LoginForm() {
   const [form, setForm] = useState(initialState);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log(form);
+    USERCALL(dispatch, form).then(() => navigate("/dashboard"));
   };
 
   const inputHandler = (e) => {
@@ -30,6 +35,8 @@ export default function LoginForm() {
 
   const isEmail = form.email === "";
   const isPassword = form.password === "";
+
+  // useEffect(() => {}, []);
 
   return (
     <Center>

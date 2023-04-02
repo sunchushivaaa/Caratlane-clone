@@ -3,6 +3,7 @@ export const UPDATEDATA = "patch/data";
 export const DELETEDATA = "delete/data";
 export const ADDDATA = "add/data";
 export const SUCCESSDATA = "success/data";
+export const CLEARDATA = "clear/data";
 
 export const GETUSER = "get/user";
 export const UPDATEUSER = "patch/user";
