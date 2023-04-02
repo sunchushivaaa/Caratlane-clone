@@ -1,4 +1,5 @@
 
+
 import { Box, Button, Flex, Heading, Image, Input, HStack, useToast } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -96,11 +97,15 @@ const CartPage = () => {
                         </Box>
                         <Button onClick={() => handlePayment()} width="100%" marginTop="2%" backgroundColor="violet" color="white" disabled={isloading} >Add to Cart</Button>
                     </Box>
-                </Box>
-            </Box>
-            <Footer/>
-        </Box>
-    )
-}
 
-export default CartPage
+            <Footer/>
+
+          </Box>
+
+        </Box>
+      </Box>
+    </>
+  );
+};
+
+export default CartPage;

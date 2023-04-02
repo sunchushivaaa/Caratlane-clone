@@ -75,7 +75,7 @@ export const reducer = (state = initialState, { type, payload }) => {
       const data = payload.data;
       const newData = state.products.map((el) => {
         if (el._id === id) {
-          return { ...el, data };
+          return { ...el, ...data };
         }
         return el;
       });

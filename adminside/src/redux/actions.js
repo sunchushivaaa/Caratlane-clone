@@ -25,8 +25,8 @@ const GETDATAFUNCTION = () => {
   return { type: GETDATA };
 };
 
-const UPDATEDATAFUNCTION = (id, data) => {
-  return { type: UPDATEDATA, payload: { id, data } };
+const UPDATEDATAFUNCTION = (payload) => {
+  return { type: UPDATEDATA, payload };
 };
 
 const DELETEDATAFUNCTION = (payload) => {
@@ -193,8 +193,8 @@ export const DATACALL = async (dispatch, extension) => {
   }
 };
 
-export const DATAUPDATECALL = async (dispatch, extension, data) => {
-  dispatch(LOADINGFUNCTION());
+export const DATAUPDATECALL = async (dispatch, data, extension) => {
+  // dispatch(LOADINGFUNCTION());
   dispatch(UPDATEDATAFUNCTION(data));
   try {
     // const request = await axios.patch(`${BASEURL}/${extension}`, data);
@@ -216,8 +216,8 @@ export const DATAADDCALL = async (dispatch, extension, data) => {
   }
 };
 
-export const DATADELETECALL = async (dispatch, extension, data) => {
-  dispatch(LOADINGFUNCTION());
+export const DATADELETECALL = async (dispatch, data, extension) => {
+  // dispatch(LOADINGFUNCTION());
   dispatch(DELETEDATAFUNCTION(data));
 
   try {
