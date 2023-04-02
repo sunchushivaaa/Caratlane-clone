@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import {Link} from "react-router-dom"
 import pic from "../images/logo.png";
 import {
   VStack,
@@ -49,9 +50,12 @@ const Navbar = () => {
           <button className="menu">
             <FaBars />
           </button>
-          <div className="nav_left_s">
-            <img id="logo" src={pic} alt="logo" />
-          </div>
+          <Link to="/">
+            <div className="nav_left_s">
+              <img id="logo" src={pic} alt="logo" />
+            </div>
+            
+          </Link>
           <div className="nav_left">
             <Flex>
               <FaHome />
@@ -166,12 +170,16 @@ const Navbar = () => {
                 </MenuItem>
                 <MenuItem>
                   <Flex gap="10px">
-                    <Button colorScheme="purple" variant="solid">
-                      Sign Up
-                    </Button>
-                    <Button colorScheme="purple" variant="outline">
-                      Log In
-                    </Button>
+                    <Link to="/register">
+                      <Button colorScheme="purple" variant="solid">
+                        Sign Up
+                      </Button>
+                    </Link>
+                    <Link to="/login">
+                      <Button colorScheme="purple" variant="outline">
+                        Log In
+                      </Button>
+                    </Link>
                   </Flex>
                 </MenuItem>
               </MenuList>
@@ -194,7 +202,9 @@ const Navbar = () => {
               </div> */}
             </li>
             <li className="dropdowns">
-              RINGS
+              <Link style={{ fontSize: "10px" }} to="/ring">
+                <h1> RINGS</h1>
+              </Link>
               <div className="submenu">
                 <div className="sub-left">
                   <div className="sub-col">
@@ -356,7 +366,9 @@ const Navbar = () => {
               </div>
             </li>
             <li className="dropdowns">
-              EARRINGS
+              <Link style={{ fontSize: "10px" }} to="/earring">
+                EARRINGS
+              </Link>
               <div className="submenu">
                 <div className="sub-left">
                   <div className="sub-col">
@@ -518,7 +530,9 @@ const Navbar = () => {
               </div>
             </li>
             <li className="dropdowns">
-              BRACELETS & BANGLES
+              <Link style={{ fontSize: "10px" }} to="/bracelet">
+                BRACELETS & BANGLES
+              </Link>
               <div className="submenu">
                 <div className="sub-left">
                   <div className="sub-col">
@@ -679,19 +693,335 @@ const Navbar = () => {
                 />
               </div>
             </li>
+            <li className="dropdowns">
+              <Link style={{ fontSize: "10px" }} to="/bracelet">
+                SOLITAIRES
+              </Link>
+              <div className="submenu">
+                <div className="sub-left">
+                  <div className="sub-col">
+                    <Text fontWeight="bold">SHOP BY STYLE</Text>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/05e292e9cf424ec58e05a67bb805355b.jpg"
+                        alt="eng"
+                      />
+                      <h1 className="cat-text">CHAIN BRACELETS</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/f9ad94f888c14b8fb194829426a12a49.png"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">FLEXIBLE BRACELETS</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/7d7c48a01cc041828a4aaaf724c93342.jpg"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">LIGHTWERE BANGLES</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/1acd93734c6c4fe7b45415563c439d5d.jpg"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">GOLD BANGLES</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/d794dd63a1ec46e8b28cfa85ab70550f.jpg"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">KIDS BRACELETS</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/ef83bc921a13405e8920ad83e0432795.jpg"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">OVAL BRACELETS</h1>
+                    </div>
+                  </div>
+                  <div className="sub-col">
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/bb3907642a3f4ca79e1a42e2026598a3.jpg"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">MANGALSUTRA BRACLETS</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/b1037b1ad67e4199a3f45f49f60241e2.jpg"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">DIMOND BRACELETS</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/fb2bbc016b7746aabe4edca3e2ebee37.png"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">22kt BRACELETS</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://cdn.caratlane.com/media/static/images/V4/2023/Shaya/03-MAR/4Block/27/CL_Menu_Block_Img01.jpg"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">SILVER BRACELETS</h1>
+                    </div>
+                  </div>
+                  <div className="sub-col">
+                    <Text mt="-35px" fontWeight="bold">
+                      SHOP BY METAL & STONE
+                    </Text>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/a18a9ec6e86b42448351c88a3fc4cd9c.png"
+                        alt="eng"
+                      />
+                      <h1 className="cat-text">GEMSTONE</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/d782ca3b7cb14d49bc7f2e12e92a2e80.png"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">SLOTAIRS</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/9440e36056344d9b87f2595609645a72.png"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">DIMOND</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/42312a2603064c83ab56f5991e09285d.png"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">GOLD</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/67d8830039e64bab9a993f203cb82208.png"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">YELLOW GOLD</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/04d2cec15dd04bcc9b33747e788f6c8e.png"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">WHITE GOLD</h1>
+                    </div>
+                  </div>
 
-            <li className="dropdowns">
-              SOLITAIRES
-              {/* <div className="submenu">
-                <div className="subCat"></div>
-              </div> */}
+                  <div className="sub-col">
+                    <Text mb="10px" mt="-140px" fontWeight="extrabold">
+                      SHOP BY
+                    </Text>
+                    <h1 className="cat-text">FOR MEN</h1>
+                    <h1 className="cat-text">Under ₹ 10k</h1>
+                    <h1 className="cat-text">₹ 10k to ₹ 20k</h1>
+                    <h1 className="cat-text"> ₹ 20k to ₹ 30k</h1>
+                    <h1 className="cat-text">Above ₹ 30k</h1>
+                    <h1 className="cat-text">FOR WOMEN</h1>
+                  </div>
+                </div>
+                <img
+                  className="sub-img"
+                  src="https://banner.caratlane.com/live-images/c50e95a41cec4ed487c5bee70904f775.jpg"
+                  alt="eng"
+                />
+              </div>
             </li>
             <li className="dropdowns">
-              MANGALSUTRA
-              {/* <div className="submenu">
-                <div className="subCat"></div>
-              </div> */}
+              <Link style={{ fontSize: "10px" }} to="/mangalsutra">
+                MANGALSUTRA
+              </Link>
+              <div className="submenu">
+                <div className="sub-left">
+                  <div className="sub-col">
+                    <Text fontWeight="bold">SHOP BY STYLE</Text>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/05e292e9cf424ec58e05a67bb805355b.jpg"
+                        alt="eng"
+                      />
+                      <h1 className="cat-text">CHAIN BRACELETS</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/f9ad94f888c14b8fb194829426a12a49.png"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">FLEXIBLE BRACELETS</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/7d7c48a01cc041828a4aaaf724c93342.jpg"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">LIGHTWERE BANGLES</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/1acd93734c6c4fe7b45415563c439d5d.jpg"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">GOLD BANGLES</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/d794dd63a1ec46e8b28cfa85ab70550f.jpg"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">KIDS BRACELETS</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/ef83bc921a13405e8920ad83e0432795.jpg"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">OVAL BRACELETS</h1>
+                    </div>
+                  </div>
+                  <div className="sub-col">
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/bb3907642a3f4ca79e1a42e2026598a3.jpg"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">MANGALSUTRA BRACLETS</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/b1037b1ad67e4199a3f45f49f60241e2.jpg"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">DIMOND BRACELETS</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/fb2bbc016b7746aabe4edca3e2ebee37.png"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">22kt BRACELETS</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://cdn.caratlane.com/media/static/images/V4/2023/Shaya/03-MAR/4Block/27/CL_Menu_Block_Img01.jpg"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">SILVER BRACELETS</h1>
+                    </div>
+                  </div>
+                  <div className="sub-col">
+                    <Text mt="-35px" fontWeight="bold">
+                      SHOP BY METAL & STONE
+                    </Text>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/a18a9ec6e86b42448351c88a3fc4cd9c.png"
+                        alt="eng"
+                      />
+                      <h1 className="cat-text">GEMSTONE</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/d782ca3b7cb14d49bc7f2e12e92a2e80.png"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">SLOTAIRS</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/9440e36056344d9b87f2595609645a72.png"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">DIMOND</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/42312a2603064c83ab56f5991e09285d.png"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">GOLD</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/67d8830039e64bab9a993f203cb82208.png"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">YELLOW GOLD</h1>
+                    </div>
+                    <div className="sub-cat">
+                      <img
+                        className="cat-img"
+                        src="https://banner.caratlane.com/live-images/04d2cec15dd04bcc9b33747e788f6c8e.png"
+                        alt="casula"
+                      />
+                      <h1 className="cat-text">WHITE GOLD</h1>
+                    </div>
+                  </div>
+
+                  <div className="sub-col">
+                    <Text mb="10px" mt="-140px" fontWeight="extrabold">
+                      SHOP BY
+                    </Text>
+                    <h1 className="cat-text">FOR MEN</h1>
+                    <h1 className="cat-text">Under ₹ 10k</h1>
+                    <h1 className="cat-text">₹ 10k to ₹ 20k</h1>
+                    <h1 className="cat-text"> ₹ 20k to ₹ 30k</h1>
+                    <h1 className="cat-text">Above ₹ 30k</h1>
+                    <h1 className="cat-text">FOR WOMEN</h1>
+                  </div>
+                </div>
+                <img
+                  className="sub-img"
+                  src="https://banner.caratlane.com/live-images/ed19e9fc6ddd4de592b67776543499c1.jpg"
+                  alt="eng"
+                />
+              </div>
             </li>
+
             <li className="dropdowns">
               OTHER JEWELLERY
               {/* <div className="submenu">
