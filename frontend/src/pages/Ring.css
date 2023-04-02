@@ -4,8 +4,8 @@
 }
 
 .Ring-subNavbar {
-    position: fixed;
-    /* top: 0; */
+    position: sticky;
+    top: 0;
     width: 100%;
     display: flex;
     align-items: center;
@@ -65,6 +65,9 @@
 
 .w-25 {
     width: 25%;
+    /* position: fixed;
+    left: 0;
+    top:0 */
 }
 
 .filtering-section {

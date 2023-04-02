@@ -92,7 +92,7 @@ const Ring = () => {
     console.log("ringData data", ringData);
     return (
         <div className='Ring-container'>
-            <img className='bannerImage' src="https://assets.cltstatic.com/images/responsive/DefaultBanner_Desktop.webp" alt="Banner_Image" />
+            <img className='bannerImage' src="https://banner.caratlane.com/live-images/dab8c9bccb50479fbad968e7ea6ea450.webp" alt="Banner_Image" />
             <div >
                 <div className='Ring-subNavbar' >
                     <div className='fetcher-secion'>
