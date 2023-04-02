@@ -33,12 +33,12 @@ const CartPage = () => {
                 </Box>
             </Box>
             <Box display={["block", "block", "flex", "flex"]} border="1px solid red" width="100%" marginTop="1%">
-                <Box width={["100%", "100%", "60%", "60%"]} border="1px solid black" overflow="scroll">
+                <Box width={["100%", "100%", "50%", "50%"]} border="1px solid black" overflow="scroll">
                     <Slider {...prod}/>
                 </Box>
-                <Box width={["100%", "100%", "40%", "40%"]} position={["initial", "initial", "fixed", "fixed"]} left="70%" >
-                    <Box width="80%" margin="auto" marginTop="4%">
-                        <h2 as="h4">Order Summary</h2>
+                <Box width={["100%", "100%", "50%", "50%"]} position={["initial", "initial", "fixed", "fixed"]} left="50%" textAlign="left" >
+                    <Box width="100%" margin="auto" marginTop="4%">
+                        <h2 as="h4">Product Name</h2>
                         <Box width="100%" boxShadow="rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset">
                             <Box className='order_summary_box'><p>Subtotal : </p></Box>
                             <Box className='order_summary_box'><p>Coupon Discount : </p></Box>

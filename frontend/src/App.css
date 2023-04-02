@@ -14,21 +14,40 @@
   display: flex;
   justify-content: space-between;
 }
-.order_box{
-  border: 1px solid red;
+.order_box form{
+
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+  row-gap: 20px;
 }
-.order_box input{
+.order_box form input {
   width: 40%;
 
 }
-.order_box select{
+.order_box form select{
   width: 40%;
 
 }
-.order_box select option{
-  width: 100%;
+
+
+@media screen and (min-width: 300px) and (max-width:560px) {
+  .order_box form{
+   padding: 4%;
+    width: 100%;
+    display: block;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    row-gap: 10px;
+  }
+  .order_box form input {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .order_box form select{
+    width: 100%;
+    margin-top: 10px;
+  
+  }
 }
