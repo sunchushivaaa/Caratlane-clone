@@ -2,17 +2,30 @@ import { Button } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addDatatoCart } from "../redux/getdata/addcartdataaction";
-import { Box } from "@chakra-ui/react";
+import { addDatatoCart, deleteDataCart, getDataCart, updateDataCart } from "../redux/getdata/addcartdataaction";
+import { Box, useToast } from "@chakra-ui/react";
 
 const Singleproduct = (prod) => {
   const [state, setState] = useState(1);
   const dispatch = useDispatch();
-
+ const toast = useToast()
   const handleChange = (e) => {
     setState(e.target.value);
-    prod.handlePrice(prod._id, e.target.value);
+    const newobj = {...prod,quantity:+e.target.value}
+    dispatch(updateDataCart(newobj))
+    .then((res)=>{
+      dispatch(getDataCart(),
+      toast({
+        title:"",
+   
+      })
+    )})
+
   };
+  const handleDelete =()=>{
+       dispatch(deleteDataCart(prod._id))
+       .then(res=>dispatch(getDataCart()))
+  }
 
   return (
     <Box
@@ -40,13 +53,13 @@ const Singleproduct = (prod) => {
           justifyContent="space-around"
           style={{ marginTop: "2%" }}
         >
-          <p>Rs.{state * prod.MRP} </p>
+          <p>Rs.{prod.quantity * prod.MRP} </p>
           <h6 style={{ textDecoration: "line-through" }}>{prod.MRPx}</h6>
         </Box>
         <Box marginTop="5%">
           <p>
             Quantity:{" "}
-            <select onChange={handleChange}>
+            <select onChange={handleChange} defaultValue={prod.quantity}>
               <option value={1}>1</option>
               <option value={2}>2</option>
               <option value={3}>3</option>
@@ -67,7 +80,7 @@ const Singleproduct = (prod) => {
         alignItems="center"
         marginLeft="5%"
       >
-        <Button width="100%">Remove</Button>
+        <Button onClick={()=>handleDelete()} width="100%">Remove</Button>
       </Box>
     </Box>
   );

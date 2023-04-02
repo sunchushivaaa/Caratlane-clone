@@ -74,22 +74,21 @@ const SignupPage = () => {
   //   </form>
   // }
 
-  return (<Box width={["95%","95%","40%","40%"]} margin="auto" marginTop={["15%","15%","5%","5%"]} padding="2%">
+  return (<Box width={["95%","95%","40%","40%"]} margin="auto" marginTop={["15%","15%","5%","5%"]} padding="2%" textAlign="center">
     <form className='form' onSubmit={(e) => onSubmit(e,data)}>
       <h1>Create account here</h1>
       <FormLabel>Name</FormLabel>
-        <Input name='name' value={data.name} onChange={handleChange} className='input' type='text' placeholder="Enter your name" />
+        <Input name='name' required value={data.name} onChange={handleChange} className='input' type='text' placeholder="Enter your name" />
         <FormLabel>Email</FormLabel>
-        <Input name="email" value={data.email} onChange={handleChange} className='input' type='email' placeholder="Enter your email" />
+        <Input name="email" required value={data.email} onChange={handleChange} className='input' type='email' placeholder="Enter your email" />
         <FormLabel>Phone Number</FormLabel>
-        <Input name="phone_number" value={data.phone_number} onChange={handleChange} className='input' type='number' placeholder="Enter your phone number" />
+        <Input name="phone_number" required value={data.phone_number} onChange={handleChange} className='input' type='number' placeholder="Enter your phone number" />
         <FormLabel>Password</FormLabel>
-        <Input name="password" value={data.password} onChange={handleChange} className='input' type='password' placeholder="Enter your password" />
+        <Input name="password" required value={data.password} onChange={handleChange} className='input' type='password' placeholder="Enter your password" />
       <Button colorScheme='teal'type='submit' marginTop="3%">
         Submit
       </Button>
       <Box className='divlogin' marginTop="3%">
-        <Button>Continue with Google</Button>
       <p>Already a user <Link to="/login" color='navy-blue'>Login here</Link></p>
       </Box>
     </form>
