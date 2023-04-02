@@ -54,6 +54,7 @@ const Navbar = () => {
             <div className="nav_left_s">
               <img id="logo" src={pic} alt="logo" />
             </div>
+            
           </Link>
           <div className="nav_left">
             <Flex>
