@@ -27,7 +27,12 @@ import { WarningIcon } from "@chakra-ui/icons";
 import { useEffect, useRef, useState } from "react";
 
 import { Link, useParams } from "react-router-dom";
-import { DATACALL, DATACLEARCALL } from "../redux/actions";
+import {
+  DATACALL,
+  DATACLEARCALL,
+  DATADELETECALL,
+  DATAUPDATECALL,
+} from "../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function CategoryComponent() {
@@ -55,8 +60,10 @@ export default function CategoryComponent() {
     setUpdate({ ...update, [name]: value });
   };
 
+  // console.log(update);
   const submitHandler = (e) => {
     e.preventDefault();
+    DATAUPDATECALL(dispatch, { id: update._id, data: update });
   };
 
   const isName = update.name === "";
@@ -106,7 +113,7 @@ export default function CategoryComponent() {
             Add
           </Button>
         </Box>
-        {products.length === 0 && !isLoading ? (
+        {products?.length === 0 && !isLoading ? (
           <Box
             display="flex"
             justifyContent="center"
@@ -138,7 +145,7 @@ export default function CategoryComponent() {
                 </Tr>
               </Thead>
               <Tbody>
-                {products.map((el) => {
+                {products?.map((el) => {
                   return (
                     <Tr key={el._id}>
                       <Td>
@@ -236,7 +243,14 @@ export default function CategoryComponent() {
               <Button ref={cancelRef} onClick={deleteOnClose}>
                 Cancel
               </Button>
-              <Button colorScheme="red" onClick={deleteOnClose} ml={3}>
+              <Button
+                colorScheme="red"
+                onClick={() => {
+                  deleteOnClose();
+                  DATADELETECALL(dispatch, name._id);
+                }}
+                ml={3}
+              >
                 Delete
               </Button>
             </AlertDialogFooter>
