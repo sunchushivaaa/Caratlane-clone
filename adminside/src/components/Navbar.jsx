@@ -14,9 +14,14 @@ import {
 import Icon from "react-icons-kit";
 import { user } from "react-icons-kit/ikons/user";
 import { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { LOGOUTUSERCALL } from "../redux/actions";
 
 export default function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const dispatch = useDispatch();
+  const { token, user: name } = useSelector((store) => store);
+
   const cancelRef = useRef();
   return (
     <>
@@ -43,6 +48,7 @@ export default function Navbar() {
           display="flex"
           alignItems="center"
           justifyContent="space-between"
+          style={{ display: token ? "flex" : "none" }}
         >
           <Box>
             <Button
@@ -71,13 +77,22 @@ export default function Navbar() {
               Logout
             </AlertDialogHeader>
 
-            <AlertDialogBody>Confirm! Do you want to logout?</AlertDialogBody>
+            <AlertDialogBody>
+              <b>{name.name}</b>, Do you want to logout?
+            </AlertDialogBody>
 
             <AlertDialogFooter>
               <Button ref={cancelRef} onClick={onClose}>
                 Cancel
               </Button>
-              <Button colorScheme="red" onClick={onClose} ml={3}>
+              <Button
+                colorScheme="red"
+                onClick={() => {
+                  onClose();
+                  LOGOUTUSERCALL(dispatch);
+                }}
+                ml={3}
+              >
                 Logout
               </Button>
             </AlertDialogFooter>

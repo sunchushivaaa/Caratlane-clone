@@ -15,8 +15,11 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import "@fontsource/roboto";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { ADDCATEGORIESCALL, CATEGORIESCALL } from "../redux/actions";
+import { WarningIcon } from "@chakra-ui/icons";
 
 const lists = [
   "Rings",
@@ -32,12 +35,19 @@ export default function Lists() {
   const cancelRef = useRef();
   const [name, setName] = useState("");
   const navigate = useNavigate();
+  const store = useSelector((store) => store);
+  const dispatch = useDispatch();
+  const [categories, setCategories] = useState([]);
 
   const inputHandler = (e) => {
     setName(e.target.value);
   };
 
   const isName = name === "";
+
+  useEffect(() => {
+    CATEGORIESCALL(dispatch, setCategories, store.user);
+  }, []);
 
   return (
     <>
@@ -68,64 +78,87 @@ export default function Lists() {
             </Button>
           </Box>
         </Box>
-        <Box
-          display="grid"
-          gridTemplateColumns={["1fr", "repeat(2,1fr)", "repeat(3,1fr)"]}
-          gap="15px"
-        >
-          {lists.map((el, i) => {
-            return (
-              <Link key={i} to={`/category/${el}`}>
-                <Box
-                  bg="pink.200"
-                  display="flex"
-                  alignItems="center"
-                  justifyContent="center"
-                  height={["15vh", "20vh", "25vh", "30vh"]}
-                  borderRadius="10px"
-                  cursor="pointer"
-                  _hover={{
-                    transition: "0.45s",
-                    bg: "pink.300",
-                  }}
-                >
-                  <Heading
-                    as="h4"
-                    fontSize={["14px", "14px", "18px", "22px"]}
-                    color="rgb(137, 0, 75)"
-                  >
-                    {el}
-                  </Heading>
-                </Box>
-              </Link>
-            );
-          })}
+        {categories === undefined || categories.length === 0 ? (
           <Box
-            bg="gray.200"
             display="flex"
-            alignItems="center"
             justifyContent="center"
-            height={["15vh", "20vh", "25vh", "30vh"]}
-            borderRadius="10px"
-            cursor="pointer"
-            onClick={() => {
-              onOpen();
-              setName("");
-            }}
-            _hover={{
-              transition: "0.45s",
-              bg: "gray.300",
-            }}
+            alignItems="center"
+            height={["20vh", "30vh", "40vh"]}
           >
+            <WarningIcon
+              color="red.300"
+              fontSize={["18px", "20px", "25px", "30px"]}
+              marginRight={["5px", "8px", "10px"]}
+            />
             <Heading
+              color="gray.300"
               as="h4"
-              fontSize={["14px", "14px", "18px", "22px"]}
-              color="black"
+              fontSize={["10px", "15px", "20px", "25px"]}
             >
-              New+
+              No items found!
             </Heading>
           </Box>
-        </Box>
+        ) : (
+          <Box
+            display="grid"
+            gridTemplateColumns={["1fr", "repeat(2,1fr)", "repeat(3,1fr)"]}
+            gap="15px"
+          >
+            {categories.map((el, i) => {
+              return (
+                <Link key={i} to={`/category/${el}`}>
+                  <Box
+                    bg="pink.200"
+                    display="flex"
+                    alignItems="center"
+                    justifyContent="center"
+                    textTransform="capitalize"
+                    height={["15vh", "20vh", "25vh", "30vh"]}
+                    borderRadius="10px"
+                    cursor="pointer"
+                    _hover={{
+                      transition: "0.45s",
+                      bg: "pink.300",
+                    }}
+                  >
+                    <Heading
+                      as="h4"
+                      fontSize={["14px", "14px", "18px", "22px"]}
+                      color="rgb(137, 0, 75)"
+                    >
+                      {el}
+                    </Heading>
+                  </Box>
+                </Link>
+              );
+            })}
+            <Box
+              bg="gray.200"
+              display="flex"
+              alignItems="center"
+              justifyContent="center"
+              height={["15vh", "20vh", "25vh", "30vh"]}
+              borderRadius="10px"
+              cursor="pointer"
+              onClick={() => {
+                onOpen();
+                setName("");
+              }}
+              _hover={{
+                transition: "0.45s",
+                bg: "gray.300",
+              }}
+            >
+              <Heading
+                as="h4"
+                fontSize={["14px", "14px", "18px", "22px"]}
+                color="black"
+              >
+                New+
+              </Heading>
+            </Box>
+          </Box>
+        )}
       </Box>
       <AlertDialog
         isOpen={isOpen}
@@ -175,9 +208,10 @@ export default function Lists() {
                 color="white"
                 onClick={() => {
                   lists.push(name);
+                  ADDCATEGORIESCALL(dispatch, name);
+                  navigate(`/category/${name}`);
                   setName("");
                   onClose();
-                  navigate(`/category/${name}`);
                 }}
                 ml={3}
               >

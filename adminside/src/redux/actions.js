@@ -13,6 +13,7 @@ import {
   ADDDATA,
   UPDATEDATA,
   DELETEDATA,
+  CLEARDATA,
   GETCATEGORIES,
   UPDATECATEGORIES,
   DELETECATEGORIES,
@@ -38,6 +39,10 @@ const ADDDATAFUNCTION = (payload) => {
 
 const SUCCESSDATAFUNCTION = (payload) => {
   return { type: SUCCESSDATA, payload };
+};
+
+const CLEARDATAFUNCTION = () => {
+  return { type: CLEARDATA };
 };
 
 const GETUSERFUNCTION = () => {
@@ -95,6 +100,7 @@ export const USERCALL = async (dispatch, data) => {
     const request = await axios.post(`${BASEURL}/admin/login`, data);
     const response = await request.data;
     dispatch(SUCCESSUSERFUNCTION(response));
+    return response;
   } catch (err) {
     dispatch(ERRORFUNCTION());
   }
@@ -135,11 +141,11 @@ export const CATEGORIESCALL = (dispatch, setCategories, user) => {
 export const UPDATECATEGORIESCALL = async (dispatch, payload) => {
   dispatch(LOADINGFUNCTION());
   try {
-    const request = await axios.patch(
-      `${BASEURL}/admin/login/categories`,
-      payload
-    );
-    await request.data;
+    // const request = await axios.patch(
+    //   `${BASEURL}/admin/login/categories`,
+    //   payload
+    // );
+    // await request.data;
     dispatch(UPDATECATEGORIESFUNCTION(payload));
   } catch (err) {
     dispatch(ERRORFUNCTION());
@@ -149,29 +155,30 @@ export const UPDATECATEGORIESCALL = async (dispatch, payload) => {
 export const DELETECATEGORIESCALL = async (dispatch, payload) => {
   dispatch(LOADINGFUNCTION());
   try {
-    const request = await axios.delete(
-      `${BASEURL}/admin/login/categories`,
-      payload
-    );
-    await request.data;
+    // const request = await axios.delete(
+    //   `${BASEURL}/admin/login/categories`,
+    //   payload
+    // );
+    // await request.data;
     dispatch(DELETECATEGORIESFUNCTION(payload));
   } catch (err) {
     dispatch(ERRORFUNCTION());
   }
 };
 
-export const ADDCATEGORIESCALL = async (dispatch, payload) => {
+export const ADDCATEGORIESCALL = (dispatch, payload) => {
   dispatch(LOADINGFUNCTION());
-  try {
-    const request = await axios.post(
-      `${BASEURL}/admin/login/categories`,
-      payload
-    );
-    await request.data;
-    dispatch(ADDCATEGORIESFUNCTION(payload));
-  } catch (err) {
-    dispatch(ERRORFUNCTION());
-  }
+  dispatch(ADDCATEGORIESFUNCTION(payload));
+  // try {
+  //   // const request = await axios.post(
+  //   //   `${BASEURL}/admin/login/categories`,
+  //   //   payload
+  //   // );
+  //   // await request.data;
+
+  // } catch (err) {
+  //   dispatch(ERRORFUNCTION());
+  // }
 };
 
 export const DATACALL = async (dispatch, extension) => {
@@ -179,7 +186,7 @@ export const DATACALL = async (dispatch, extension) => {
   dispatch(GETDATAFUNCTION());
   try {
     const request = await axios.get(`${BASEURL}/${extension}`);
-    const response = await request.data;
+    const response = await request.data.Data;
     dispatch(SUCCESSDATAFUNCTION(response));
   } catch (err) {
     dispatch(ERRORFUNCTION());
@@ -188,10 +195,10 @@ export const DATACALL = async (dispatch, extension) => {
 
 export const DATAUPDATECALL = async (dispatch, extension, data) => {
   dispatch(LOADINGFUNCTION());
+  dispatch(UPDATEDATAFUNCTION(data));
   try {
-    const request = await axios.patch(`${BASEURL}/${extension}`, data);
-    await request.data;
-    dispatch(UPDATEDATAFUNCTION(data));
+    // const request = await axios.patch(`${BASEURL}/${extension}`, data);
+    // await request.data;
   } catch (err) {
     dispatch(ERRORFUNCTION());
   }
@@ -199,10 +206,11 @@ export const DATAUPDATECALL = async (dispatch, extension, data) => {
 
 export const DATAADDCALL = async (dispatch, extension, data) => {
   dispatch(LOADINGFUNCTION());
+  dispatch(ADDDATAFUNCTION(data));
   try {
-    const request = await axios.post(`${BASEURL}/${extension}/add`, data);
-    await request.data;
-    dispatch(ADDDATAFUNCTION(data));
+    // const request = await axios.post(`${BASEURL}/${extension}/add`, data);
+    // await request.data;
+    // ;
   } catch (err) {
     dispatch(ERRORFUNCTION());
   }
@@ -210,13 +218,18 @@ export const DATAADDCALL = async (dispatch, extension, data) => {
 
 export const DATADELETECALL = async (dispatch, extension, data) => {
   dispatch(LOADINGFUNCTION());
+  dispatch(DELETEDATAFUNCTION(data));
+
   try {
-    const request = await axios.delete(
-      `${BASEURL}/${extension}/delete/${data}`
-    );
-    await request.data;
-    dispatch(DELETEDATAFUNCTION(data));
+    // const request = await axios.delete(
+    //   `${BASEURL}/${extension}/delete/${data}`
+    // );
+    // await request.data;
   } catch (err) {
     dispatch(ERRORFUNCTION());
   }
+};
+
+export const DATACLEARCALL = (dispatch) => {
+  dispatch(CLEARDATAFUNCTION());
 };
