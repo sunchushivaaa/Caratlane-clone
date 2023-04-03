@@ -98,12 +98,10 @@ const CartPage = () => {
                         </Box>
                         <Button onClick={() => handlePayment()} width="100%" marginTop="2%" backgroundColor="violet" color="white" disabled={isloading} >Add to Cart</Button>
                     </Box>
-
-            <Footer/>
-
           </Box>
 
         </Box>
+        <Footer/>
       </Box>
     </>
   );

@@ -189,7 +189,9 @@ const Navbar = () => {
               <FaHeart />
             </Button>
             <Button>
+              <Link to="/cartpage">
               <FaShoppingBasket />
+              </Link>
             </Button>
           </Flex>
         </div>

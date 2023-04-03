@@ -14,17 +14,17 @@ const Singleproduct = (prod) => {
     const newobj = {...prod,quantity:+e.target.value}
     dispatch(updateDataCart(newobj))
     .then((res)=>{
-      dispatch(getDataCart(),
-      toast({
-        title:"",
-   
-      })
-    )})
-
+      dispatch(getDataCart())
+      prod.setCoupon(!prod.coupon)
+    })
+    
   };
   const handleDelete =()=>{
        dispatch(deleteDataCart(prod._id))
-       .then(res=>dispatch(getDataCart()))
+       .then((res)=>{
+        dispatch(getDataCart())
+        prod.setCoupon(!prod.coupon)
+      })
   }
 
   return (

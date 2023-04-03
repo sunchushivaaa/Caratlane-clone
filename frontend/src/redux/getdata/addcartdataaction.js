@@ -65,7 +65,7 @@ export const deleteDataCart =(data)=> (dispatch)=>{
     let token = localStorage.getItem("token")
 
     dispatch({type:DELETE_CART_REQUEST})
-    return  axios.post(`https://gold-jittery-chameleon.cyclic.app/cart/delete/${data}`,{
+    return  axios.delete(`https://gold-jittery-chameleon.cyclic.app/cart/delete/${data}`,{
         headers:{
             "Authorization":token
         },
