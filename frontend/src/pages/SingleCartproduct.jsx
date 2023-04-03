@@ -15,7 +15,6 @@ const Singleproduct = (prod) => {
     dispatch(updateDataCart(newobj))
     .then((res)=>{
       dispatch(getDataCart())
-      prod.setCoupon(!prod.coupon)
     })
     
   };
