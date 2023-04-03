@@ -15,13 +15,9 @@ const Ring = () => {
   const [filtering, setFiltering] = useState([]);
 
   const fetchData = async () => {
-    try {
-      const data = await getBraceletData();
-      // console.log(data);
-      setRing(data);
-    } catch (e) {
-      console.log(e);
-    }
+    getBraceletData()
+      .then((res) => setRing(res))
+      .catch((err) => console.log(err));
   };
 
   // console.log(sortOrder);

@@ -79,13 +79,13 @@ export const reducer = (state = initialState, { type, payload }) => {
         }
         return el;
       });
-      return { ...state, products: newData };
+      return { ...state, products: newData, isLoading: false, isError: false };
     }
     case DELETEDATA: {
       const newData = state.products.filter((el) => {
         return el._id !== payload;
       });
-      return { ...state, products: newData };
+      return { ...state, products: newData, isLoading: false, isError: false };
     }
     case CLEARDATA: {
       return { ...state, products: [] };

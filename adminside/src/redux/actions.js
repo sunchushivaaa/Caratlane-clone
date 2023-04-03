@@ -193,12 +193,15 @@ export const DATACALL = async (dispatch, extension) => {
   }
 };
 
-export const DATAUPDATECALL = async (dispatch, data, extension) => {
-  // dispatch(LOADINGFUNCTION());
-  dispatch(UPDATEDATAFUNCTION(data));
+export const DATAUPDATECALL = async (dispatch, { id, data }, extension) => {
+  dispatch(LOADINGFUNCTION());
   try {
-    // const request = await axios.patch(`${BASEURL}/${extension}`, data);
-    // await request.data;
+    const request = await axios.patch(
+      `${BASEURL}/${extension}/update/${id}`,
+      data
+    );
+    await request.data;
+    dispatch(UPDATEDATAFUNCTION({ id, data }));
   } catch (err) {
     dispatch(ERRORFUNCTION());
   }
@@ -217,14 +220,14 @@ export const DATAADDCALL = async (dispatch, extension, data) => {
 };
 
 export const DATADELETECALL = async (dispatch, data, extension) => {
-  // dispatch(LOADINGFUNCTION());
-  dispatch(DELETEDATAFUNCTION(data));
+  dispatch(LOADINGFUNCTION());
 
   try {
-    // const request = await axios.delete(
-    //   `${BASEURL}/${extension}/delete/${data}`
-    // );
-    // await request.data;
+    const request = await axios.delete(
+      `${BASEURL}/${extension}/delete/${data}`
+    );
+    await request.data;
+    dispatch(DELETEDATAFUNCTION(data));
   } catch (err) {
     dispatch(ERRORFUNCTION());
   }
