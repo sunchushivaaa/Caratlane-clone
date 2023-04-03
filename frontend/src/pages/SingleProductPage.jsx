@@ -78,6 +78,7 @@ const CartPage = () => {
       
     }
     return (
+      <>
         <Box width="100%">
             <Box width="100%" background="white" boxShadow="rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset">
                <Navbar/>
