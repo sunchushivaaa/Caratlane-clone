@@ -1,17 +1,28 @@
-
-
-import { Box, Button, Flex, Heading, Image, Input, HStack, useToast } from '@chakra-ui/react'
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router'
-import { useParams } from "react-router-dom"
-import { getDatabracelet, getDataRing, getDataearings, getDatamangalsutra } from '../redux/getdata/action'
-import Singleproduct from './SingleCartproduct'
-import Slider from '../components/Carasul'
-import { addDataCart } from '../redux/getdata/addcartdataaction'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
-
+import {
+  Box,
+  Button,
+  Flex,
+  Heading,
+  Image,
+  Input,
+  HStack,
+  useToast,
+} from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router";
+import { useParams } from "react-router-dom";
+import {
+  getDatabracelet,
+  getDataRing,
+  getDataearings,
+  getDatamangalsutra,
+} from "../redux/getdata/action";
+import Singleproduct from "./SingleCartproduct";
+import Slider from "../components/Carasul";
+import { addDataCart } from "../redux/getdata/addcartdataaction";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 const CartPage = () => {
     const { id } = useParams();
@@ -78,7 +89,6 @@ const CartPage = () => {
       
     }
     return (
-      <>
         <Box width="100%">
             <Box width="100%" background="white" boxShadow="rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset">
                <Navbar/>
@@ -98,8 +108,10 @@ const CartPage = () => {
                         </Box>
                         <Button onClick={() => handlePayment()} width="100%" marginTop="2%" backgroundColor="violet" color="white" disabled={isloading} >Add to Cart</Button>
                     </Box>
-          </Box>
 
+            <Footer/>
+
+          </Box>
         </Box>
         <Footer/>
       </Box>
