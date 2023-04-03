@@ -63,7 +63,8 @@ export default function CategoryComponent() {
   // console.log(update);
   const submitHandler = (e) => {
     e.preventDefault();
-    DATAUPDATECALL(dispatch, { id: update._id, data: update });
+    console.log({ id: update._id, data: update });
+    DATAUPDATECALL(dispatch, { id: update._id, data: update }, type);
   };
 
   const isName = update.name === "";
@@ -247,7 +248,7 @@ export default function CategoryComponent() {
                 colorScheme="red"
                 onClick={() => {
                   deleteOnClose();
-                  DATADELETECALL(dispatch, name._id);
+                  DATADELETECALL(dispatch, name._id, type);
                 }}
                 ml={3}
               >
