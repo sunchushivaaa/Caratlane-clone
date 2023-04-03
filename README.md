@@ -1,54 +1,59 @@
-<h1>Karat<h1>  
+# <a href="https://karat-ten.vercel.app/"/>Caratlane Clone</a>
+
+ <h2>CaratLane is India’s first Omni channel jewelry brand, founded in 2008.</h2> 
+ 
+  <h3>A Full Stack Group project build using MERN stack, which was planned and executed in 5 days.
+ All functionalities on this project are achieved using DOM manipulation, CRUD operations, Filtering, Sorting, etc.</h3> 
+ 
+ <h3>Languages and Tech Stack used:</h3>
+<div>
+ <ul>
+ <li>HTML</li>
+ <li>CSS</li>
+ <li>JavaScript</li>
+ <li>ReactJs</li>
+ <li>NodeJs</li>
+ <li>ExpressJs</li>
+ <li>MongoDb</li>
+ <li>Chakra UI</li>
+ <li>Redux</li>
+ <li>Redux-Thunk</li>
+ <li>React-Router-Dom</li>
+ </ul>
+ </div>
+
+<div>
+ <h3>Features:</h3>
+ <ul>
+ <li>Login & Signup Page</li>
+ <li>Cart Page</li>
+ <li>Category Page</li>
+ <li>Filtering & Sorting</li>
+ <li>Search</li>
+ </ul>
+ </div>
+
+<h2>Project Layout</h2>
+
+<img src="https://user-images.githubusercontent.com/103638817/229425605-78114a97-8740-4a31-8d84-4b547cbbd124.png" />
+
+<img src="https://user-images.githubusercontent.com/103638817/229425728-119777d9-4576-4496-a48b-ecb06ba85dbf.png" />
+
+<img src="https://user-images.githubusercontent.com/103638817/229425757-da1873bc-2fee-4e39-ac99-d8015bc7c6d4.png" />
 
 
-<h1>Description</h1>
-<p> A e-commerce platform, CaratLane provides the exquisite craftsmanship of beautiful jewellery designs such as rings, earrings, pendants, necklace, chains, bangles, bracelets, ...</p>
 
-<h1>Tech Stacks we have used</h1>
+<h2>Deployments</h2>
+ <h3><a href="https://karat-ten.vercel.app/">User/Client Website</a></h3>
+ <h3><a href="https://karat-admin.vercel.app/">Admin side Website</a></h3>
 
-<ul>
-<li>Java Script</li>
-<li>React</li>
-<li>Node</li>
-<li>Express</li>
-<li>Mongo Db</li>
-<li>Chakra UI</li>
-<li>Styled-Components</li>
-<li>NPM Packages</li>
-<li>Redux-Thunk</li>
-<li>React-Router-Dom</li>
-</ul>
+<h2>Team members / Collaborators</h2>
 
-<h1>Features</h1>
-<ol>
-<li>Search</li>
-<li>Register Page</li>
-<li>Login Page</li>
-<li>Filter</li>
-<li>Sort</li>
-<li>Pagination</li>
-<li>Checkout</li>
-<li>Payment</li>
-</ol>
-
-<h1>Project Layout</>
-![karat1](https://user-images.githubusercontent.com/103638817/229425605-78114a97-8740-4a31-8d84-4b547cbbd124.png)
-
-![karat2](https://user-images.githubusercontent.com/103638817/229425728-119777d9-4576-4496-a48b-ecb06ba85dbf.png)
-
-![register](https://user-images.githubusercontent.com/103638817/229425757-da1873bc-2fee-4e39-ac99-d8015bc7c6d4.png)
-
-
-<h1>Go Live</h1>
- https://karat-ten.vercel.app/
-
-# silly-ink-340
-A collaborative project --> https://www.caratlane.com/
-
-#Demo : https://karat-ten.vercel.app/
-
-##Team Members:
-1. fp06_271 - Shiva Sunchu
-2. fw18_0577 - Uddeshy Jaiswal
-3. fp04_116 - Pushkaraj Anand Lolusare
-4. fw19_0076 - Md Anwar Hossain
+<div>
+ <ol>
+ <li>fp06_271 - Shiva Sunchu.</li>
+ <li>fw18_0577 - Uddeshy Jaiswal.</li>
+ <li>fp04_116 - Pushkaraj Anand Lolusare.</li>
+ <li>fw19_0076 - Md Anwar Hossain.</li>
+ </ol>
+ </div>
