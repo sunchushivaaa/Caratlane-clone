@@ -1,4 +1,4 @@
-# <a href="https://karat-ten.vercel.app/"/>Caratlane Clone</a>
+# <a href="https://karat-ten.vercel.app/" target="_blank">Caratlane Clone</a>
 
  <h2>CaratLane is India’s first Omni channel jewelry brand, founded in 2008.</h2> 
  
@@ -44,8 +44,8 @@
 
 
 <h2>Deployments</h2>
- <h3><a href="https://karat-ten.vercel.app/">User/Client Website</a></h3>
- <h3><a href="https://karat-admin.vercel.app/">Admin side Website</a></h3>
+ <h3><a href="https://karat-ten.vercel.app/" target="_blank">User/Client Website</a></h3>
+ <h3><a href="https://karat-admin.vercel.app/" target="_blank">Admin side Website</a></h3>
 
 <h2>Team members / Collaborators</h2>
 
