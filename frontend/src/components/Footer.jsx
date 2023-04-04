@@ -1,9 +1,9 @@
-import React from 'react'
-import "../style/footer.css"
+import React from "react";
+import "../style/footer.css";
 import store from "../images/store.png";
 import payment from "../images/payment.png";
 import { FaPhoneAlt, FaWhatsapp, FaWeixin } from "react-icons/fa";
-import { Flex,Button, Image } from '@chakra-ui/react';
+import { Flex, Button, Image } from "@chakra-ui/react";
 const Footer = () => {
   return (
     <div className="footer">
@@ -24,7 +24,9 @@ const Footer = () => {
             <button className="btn-tag">OLD GOLD EXCHANGE</button>
           </div>
           <div className="col">
-            <h1  id='customer-col' className="col-header">Customer Service</h1>
+            <h1 id="customer-col" className="col-header">
+              Customer Service
+            </h1>
             <button className="btn-tag">RETURN POLICY</button>
             <button className="btn-tag">ORDER STATUS</button>
           </div>
@@ -52,11 +54,9 @@ const Footer = () => {
         </div>
         <div className="footer-top2">
           <div>
-        
             <Image w="100%" src={store} alt="STORE" />
           </div>
           <div>
-          
             <Image w="100%" src={payment} alt="PAY" />
           </div>
         </div>
@@ -64,5 +64,5 @@ const Footer = () => {
       <div className="footer-bottom"></div>
     </div>
   );
-}
-export default Footer
+};
+export default Footer;

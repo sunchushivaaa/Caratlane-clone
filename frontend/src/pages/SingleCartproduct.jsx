@@ -2,29 +2,31 @@ import { Button } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addDatatoCart, deleteDataCart, getDataCart, updateDataCart } from "../redux/getdata/addcartdataaction";
+import {
+  addDatatoCart,
+  deleteDataCart,
+  getDataCart,
+  updateDataCart,
+} from "../redux/getdata/addcartdataaction";
 import { Box, useToast } from "@chakra-ui/react";
 
 const Singleproduct = (prod) => {
   const [state, setState] = useState(1);
   const dispatch = useDispatch();
- const toast = useToast()
+  const toast = useToast();
   const handleChange = (e) => {
     setState(e.target.value);
-    const newobj = {...prod,quantity:+e.target.value}
-    dispatch(updateDataCart(newobj))
-    .then((res)=>{
-      dispatch(getDataCart())
-    })
-    
+    const newobj = { ...prod, quantity: +e.target.value };
+    dispatch(updateDataCart(newobj)).then((res) => {
+      dispatch(getDataCart());
+    });
   };
-  const handleDelete =()=>{
-       dispatch(deleteDataCart(prod._id))
-       .then((res)=>{
-        dispatch(getDataCart())
-        prod.setCoupon(!prod.coupon)
-      })
-  }
+  const handleDelete = () => {
+    dispatch(deleteDataCart(prod._id)).then((res) => {
+      dispatch(getDataCart());
+      prod.setCoupon(!prod.coupon);
+    });
+  };
 
   return (
     <Box
@@ -79,7 +81,9 @@ const Singleproduct = (prod) => {
         alignItems="center"
         marginLeft="5%"
       >
-        <Button onClick={()=>handleDelete()} width="100%">Remove</Button>
+        <Button onClick={() => handleDelete()} width="100%">
+          Remove
+        </Button>
       </Box>
     </Box>
   );

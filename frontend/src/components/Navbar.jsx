@@ -1,6 +1,5 @@
 import React from "react";
-import { useState } from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import pic from "../images/logo.png";
 import {
   VStack,
@@ -54,7 +53,6 @@ const Navbar = () => {
             <div className="nav_left_s">
               <img id="logo" src={pic} alt="logo" />
             </div>
-            
           </Link>
           <div className="nav_left">
             <Flex>
@@ -190,7 +188,7 @@ const Navbar = () => {
             </Button>
             <Button>
               <Link to="/cartpage">
-              <FaShoppingBasket />
+                <FaShoppingBasket />
               </Link>
             </Button>
           </Flex>

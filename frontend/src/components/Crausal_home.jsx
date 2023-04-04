@@ -8,6 +8,7 @@ const Crausal_home = () => {
         <img
           style={{ width: "350px" }}
           src="https://cdn.caratlane.com/media/catalog/product/cache/6/image/480x480/9df78eab33525d08d6e5fb8d27136e95/J/S/JS00811-1YP900_11_listfront.jpg"
+          alt="banner"
         />
         <p
           style={{

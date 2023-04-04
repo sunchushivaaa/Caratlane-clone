@@ -4,7 +4,6 @@
   margin: auto;
 }
 .banner-img {
-
   display: block;
   width: 100%;
   height: 70vh;
@@ -81,7 +80,7 @@
 .mid-btn {
   width: 50%;
   padding: 12px;
-  border:1px solid  #a151f2;
+  border: 1px solid #a151f2;
   font-size: larger;
 }
 .con5 {
