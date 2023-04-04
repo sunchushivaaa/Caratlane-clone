@@ -2,7 +2,7 @@
 
  <h2>CaratLane is India’s first Omni channel jewelry brand, founded in 2008.</h2> 
  
-  <h3>A Full Stack Group project build using MERN stack, which was planned and executed in 5 days.
+  <h3>A Full Stack Collaborative project build using MERN stack, which was planned and executed within five days.
  All functionalities on this project are achieved using DOM manipulation, CRUD operations, Filtering, Sorting, etc.</h3> 
  
  <h3>Languages and Tech Stack used:</h3>
