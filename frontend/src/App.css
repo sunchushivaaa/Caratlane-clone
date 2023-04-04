@@ -1,21 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* font-family: "Varela Round", sans-serif; */
 }
 .App {
   text-align: center;
 }
 
-.order_summary_box{
+.order_summary_box {
   padding: 2%;
   display: flex;
   justify-content: space-between;
 }
-.order_box form{
-
+.order_box form {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -24,18 +21,14 @@
 }
 .order_box form input {
   width: 40%;
-
 }
-.order_box form select{
+.order_box form select {
   width: 40%;
-
 }
 
-
-
-@media screen and (min-width: 300px) and (max-width:560px) {
-  .order_box form{
-   padding: 4%;
+@media screen and (min-width: 300px) and (max-width: 560px) {
+  .order_box form {
+    padding: 4%;
     width: 100%;
     display: block;
     flex-wrap: wrap;
@@ -46,22 +39,17 @@
     width: 100%;
     margin-top: 10px;
   }
-  .order_box form select{
+  .order_box form select {
     width: 100%;
     margin-top: 10px;
-  
   }
 }
 
-.order_box select option{
+.order_box select option {
   width: 100%;
 }
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-
-
-

@@ -1,60 +1,52 @@
-.footer{
-          width: 100%;
-          background-color: #f6eff6;
-         
-
-          
+.footer {
+  width: 100%;
+  background-color: #f6eff6;
 }
-.footer-bottom{
-          width: 100%;
-          height: 50%;
-           border: 1px solid red;
-
+.footer-bottom {
+  width: 100%;
+  height: 50%;
+  border: 1px solid red;
 }
-.footer-top{
-          width: 100%;
-         
-         
+.footer-top {
+  width: 100%;
 }
-.top-col{
-     width: 100%;
-     height: 60%;
-     margin: auto;
-     display: flex;
-     justify-content:space-evenly ; 
-     align-items: center;   
-      
+.top-col {
+  width: 100%;
+  height: 60%;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
-.col{
-          padding: 15px;
-          width: 15%;
-          height: 100%;
-            display: flex;
-            flex-direction: column;
-            padding-top: 40px;
-
+.col {
+  padding: 15px;
+  width: 15%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
 }
-#customer-col{
-     margin-top: -50px;
+#customer-col {
+  margin-top: -50px;
 }
-.col-header{
-          font-weight: 700;
-          text-align: left;
-          color: rgb(16, 15, 15);
+.col-header {
+  font-weight: 700;
+  text-align: left;
+  color: rgb(16, 15, 15);
 }
-.btn-tag{
-          font-size: 12px;
-          text-align: left;
-          margin-bottom: 5px;
-          color: #2d2f35;
+.btn-tag {
+  font-size: 12px;
+  text-align: left;
+  margin-bottom: 5px;
+  color: #2d2f35;
 }
-.btn-tag:hover{
-     color: purple;
+.btn-tag:hover {
+  color: purple;
 }
-.footer-top2{
-          margin: auto;
-          width: 80%;
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
+.footer-top2 {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }

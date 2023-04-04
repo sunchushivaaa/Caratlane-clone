@@ -51,15 +51,21 @@ export default function Navbar() {
           style={{ display: token ? "flex" : "none" }}
         >
           <Box>
-            <Button
-              fontSize={["12px", "12px", "14px", "16px"]}
-              padding={["5px 12px", "5px 12px", "10px 15px", "15px"]}
-              bg="#f1c4d8"
-              cursor="pointer"
-              color="black"
+            <a
+              href="https://karat-ten.vercel.app/"
+              rel="noreferrer"
+              target="_blank"
             >
-              Main Website
-            </Button>
+              <Button
+                fontSize={["12px", "12px", "14px", "16px"]}
+                padding={["5px 12px", "5px 12px", "10px 15px", "15px"]}
+                bg="#f1c4d8"
+                cursor="pointer"
+                color="black"
+              >
+                Main Website
+              </Button>
+            </a>
           </Box>
           <Box cursor="pointer">
             <Icon onClick={onOpen} size="25px" icon={user} />

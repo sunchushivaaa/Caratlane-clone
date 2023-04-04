@@ -41,8 +41,6 @@
 
 <img src="https://user-images.githubusercontent.com/103638817/229425757-da1873bc-2fee-4e39-ac99-d8015bc7c6d4.png" />
 
-
-
 <h2>Deployments</h2>
  <h3><a href="https://karat-ten.vercel.app/" target="_blank">User/Client Website</a></h3>
  <h3><a href="https://karat-admin.vercel.app/" target="_blank">Admin side Website</a></h3>
