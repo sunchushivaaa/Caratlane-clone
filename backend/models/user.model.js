@@ -8,6 +8,7 @@ const userSchema = mongoose.Schema({
     age: Number,
     city: String,
     is_married: Boolean,
+    userId: String,
 })
 
 const UserModel=mongoose.model("user", userSchema)

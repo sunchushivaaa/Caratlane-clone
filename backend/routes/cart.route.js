@@ -2,13 +2,16 @@ const express = require("express");
 // const { check } = require("../middleware/check");
 const CartModel = require("../models/cart.model");
 // const  CartModel = require("../model/cart.model");
+const jwt = require("jsonwebtoken")
 
 const cartRouter = express.Router();
 
 cartRouter.get("/", async (req, res) => {
-    const userID = req.body.userID;
+    const userId = req.body.userId;
+    const token=req.headers.authorization
+    const decoded= jwt.verify(token, "raj")
     try {
-      const data = await CartModel.find({ userID: userID });
+      const data = await CartModel.find({ userId: decoded.userId});
       res.send(data);
     } catch (error) {
       res.send(error);
@@ -16,6 +19,7 @@ cartRouter.get("/", async (req, res) => {
 });
 
 cartRouter.post("/add", async (req, res) => {
+  console.log(req.body)
     try {
         const data = new CartModel(req.body);
         await data.save();
